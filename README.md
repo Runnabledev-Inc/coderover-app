@@ -38,9 +38,7 @@ Download the latest build for your platform from the [**Releases**](../../releas
 
 On Linux, install the package with `sudo apt install ./CodeRover_<version>_amd64.deb`.
 
-> **Windows:** CodeRover is a brand-new app from a new publisher, so Windows Defender SmartScreen may show a blue *"Windows protected your PC"* dialog. This is expected for apps that aren't code-signed yet — it does not mean anything is wrong. Click **More info**, then **Run anyway** to continue. You only need to do this once. (Prefer to double-check first? Verify the download against the published checksums — see [Verifying your download](#verifying-your-download).)
->
-> **macOS:** builds are not yet notarized by Apple. On first launch, **right-click** (or Control-click) CodeRover in Applications and choose **Open**, then confirm. You only need to do this once.
+> **Heads up:** the first time you run CodeRover, Windows or macOS may warn about an unrecognized/unknown publisher because the app isn't code-signed yet. This is expected and safe — see [Why the "unknown publisher" warning?](#why-the-unknown-publisher-warning) for the one-time steps to continue on each platform.
 
 When you open CodeRover for the first time it starts with a local account - no sign-in required - and takes you straight to the agent. Add your AI provider API key in settings and start chatting. To work on a specific project, attach a folder in the composer before sending your message.
 
@@ -64,6 +62,33 @@ If the hash matches the value in `SHA256SUMS.txt`, the file is exactly what our 
 ### Updates
 
 CodeRover on **Windows and macOS** updates itself automatically via the built-in updater. On **Linux**, download and reinstall the latest `.deb` to upgrade. You can always grab the newest build from the [Releases](../../releases/latest) page.
+
+## Why the "unknown publisher" warning?
+
+CodeRover is a new app, and its installers are **not code-signed or notarized yet**. Code-signing certificates (and an Apple Developer account for notarization) are paid, identity-verified services we haven't purchased yet. Without them, Windows and macOS can't automatically confirm who published the app, so they show a caution dialog the first time you run it.
+
+**This is expected and does not mean the app is unsafe.** CodeRover is built automatically by our release pipeline, and every release ships a `SHA256SUMS.txt` so you can independently verify your download (see [Verifying your download](#verifying-your-download)). We plan to add proper code-signing and notarization as the project grows.
+
+Here's how to get past the warning on each platform — you only need to do this once per install:
+
+**Windows (Defender SmartScreen)**
+
+1. Run the downloaded `CodeRover_<version>_x64-setup.exe`.
+2. When the blue **"Windows protected your PC"** dialog appears, click **More info**.
+3. Click **Run anyway**, then continue through the installer.
+
+> If you don't see a **Run anyway** button (only **Don't run**), SmartScreen is set to *Block* mode on your machine. Either set **Windows Security → App & browser control → Reputation-based protection → Check apps and files** to **Warn**, or clear the download's "from the internet" flag first with PowerShell:
+> ```powershell
+> Unblock-File -Path "$HOME\Downloads\CodeRover_<version>_x64-setup.exe"
+> ```
+
+**macOS (Gatekeeper)**
+
+1. Open the downloaded `.dmg` and drag **CodeRover** into **Applications**.
+2. In **Applications**, **right-click** (or Control-click) **CodeRover** and choose **Open**.
+3. Confirm in the dialog. After this first launch, it opens normally like any other app.
+
+**Linux** — the `.deb` package is not affected; install it normally with `sudo apt install ./CodeRover_<version>_amd64.deb`.
 
 ## This repository
 

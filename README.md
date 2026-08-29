@@ -38,11 +38,28 @@ Download the latest build for your platform from the [**Releases**](../../releas
 
 On Linux, install the package with `sudo apt install ./CodeRover_<version>_amd64.deb`.
 
-> **Windows:** the installer isn't code-signed yet, so Defender SmartScreen may warn that it's from an "unknown publisher." Click **More info**, then **Run anyway** to continue. You only need to do this once.
+> **Windows:** CodeRover is a brand-new app from a new publisher, so Windows Defender SmartScreen may show a blue *"Windows protected your PC"* dialog. This is expected for apps that aren't code-signed yet — it does not mean anything is wrong. Click **More info**, then **Run anyway** to continue. You only need to do this once. (Prefer to double-check first? Verify the download against the published checksums — see [Verifying your download](#verifying-your-download).)
 >
 > **macOS:** builds are not yet notarized by Apple. On first launch, **right-click** (or Control-click) CodeRover in Applications and choose **Open**, then confirm. You only need to do this once.
 
 When you open CodeRover for the first time it starts with a local account - no sign-in required - and takes you straight to the agent. Add your AI provider API key in settings and start chatting. To work on a specific project, attach a folder in the composer before sending your message.
+
+### Verifying your download
+
+Because the installers aren't code-signed yet, every release includes a `SHA256SUMS.txt` file so you can confirm your download is authentic and hasn't been tampered with. Compare the hash of your file against the matching line in that file:
+
+```powershell
+# Windows (PowerShell)
+Get-FileHash .\CodeRover_<version>_x64-setup.exe -Algorithm SHA256
+```
+
+```bash
+# macOS / Linux
+shasum -a 256 CodeRover_<version>_*.dmg   # macOS
+sha256sum CodeRover_<version>_amd64.deb    # Linux
+```
+
+If the hash matches the value in `SHA256SUMS.txt`, the file is exactly what our build pipeline produced.
 
 ### Updates
 
@@ -55,7 +72,7 @@ This repo is the public download and auto-update home for the CodeRover desktop 
 - Download releases from the [Releases](../../releases) page
 - File bugs and feature requests
 
-Each release includes the per-platform installers, the macOS/Windows updater bundles and their signatures, and a `latest.json` updater manifest.
+Each release includes the per-platform installers, the macOS/Windows updater bundles and their signatures, a `latest.json` updater manifest, and a `SHA256SUMS.txt` checksum file for verifying downloads.
 
 ## Feedback
 

@@ -38,6 +38,8 @@ Download the latest build for your platform from the [**Releases**](../../releas
 
 On Linux, install the package with `sudo apt install ./CodeRover_<version>_amd64.deb`.
 
+> **Windows:** the installer isn't code-signed yet, so Defender SmartScreen may warn that it's from an "unknown publisher." Click **More info**, then **Run anyway** to continue. You only need to do this once.
+>
 > **macOS:** builds are not yet notarized by Apple. On first launch, **right-click** (or Control-click) CodeRover in Applications and choose **Open**, then confirm. You only need to do this once.
 
 When you open CodeRover for the first time it starts with a local account - no sign-in required - and takes you straight to the agent. Add your AI provider API key in settings and start chatting. To work on a specific project, attach a folder in the composer before sending your message.

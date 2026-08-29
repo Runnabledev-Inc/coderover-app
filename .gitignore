@@ -1,0 +1,9 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Local build/release staging (installers are attached to GitHub Releases, not committed)
+dist-release/
+*.exe
+*.exe.sig

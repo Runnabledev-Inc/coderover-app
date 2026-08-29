@@ -1,6 +1,6 @@
 # CodeRover
 
-CodeRover is a free, local-first AI coding agent desktop app for Windows, macOS, and Linux - describe what you need and it edits your code, runs commands, and gets the task done on your own machine.
+CodeRover is a free, local-first AI coding agent desktop app for Windows, macOS, and Linux — describe what you need and it edits your code, runs commands, and gets the task done on your own machine.
 
 <p align="center">
   <a href="#install">

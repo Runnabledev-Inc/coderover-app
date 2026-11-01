@@ -61,25 +61,6 @@ If the hash matches the value in `SHA256SUMS.txt`, the file is exactly what our 
 
 CodeRover on **Windows and macOS** updates itself automatically via the built-in updater. On **Linux**, download and reinstall the latest `.deb` to upgrade. You can always grab the newest build from the [Releases](../../releases/latest) page.
 
-## Why the "unknown publisher" warning?
-
-CodeRover is a new app, and its installers are **not code-signed or notarized yet**. Code-signing certificates (and an Apple Developer account for notarization) are paid, identity-verified services we haven't purchased yet. Without them, Windows and macOS can't automatically confirm who published the app, so they show a caution dialog the first time you run it.
-
-**This is expected and does not mean the app is unsafe.** CodeRover is built automatically by our release pipeline, and every release ships a `SHA256SUMS.txt` so you can independently verify your download (see [Verifying your download](#verifying-your-download)). We plan to add proper code-signing and notarization as the project grows.
-
-Here's how to get past the warning on each platform — you only need to do this once per install:
-
-**Windows (Defender SmartScreen)**
-
-1. Run the downloaded `CodeRover_<version>_x64-setup.exe`.
-2. When the blue **"Windows protected your PC"** dialog appears, click **More info**.
-3. Click **Run anyway**, then continue through the installer.
-
-> If you don't see a **Run anyway** button (only **Don't run**), SmartScreen is set to *Block* mode on your machine. Either set **Windows Security → App & browser control → Reputation-based protection → Check apps and files** to **Warn**, or clear the download's "from the internet" flag first with PowerShell:
-> ```powershell
-> Unblock-File -Path "$HOME\Downloads\CodeRover_<version>_x64-setup.exe"
-> ```
-
 **macOS (Gatekeeper)**
 
 1. Open the downloaded `.dmg` and drag **CodeRover** into **Applications**.

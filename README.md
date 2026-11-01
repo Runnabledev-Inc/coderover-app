@@ -38,8 +38,6 @@ Download the latest build for your platform from the [**Releases**](../../releas
 
 On Linux, install the package with `sudo apt install ./CodeRover_<version>_amd64.deb`.
 
-> **Heads up:** the first time you run CodeRover, Windows or macOS may warn about an unrecognized/unknown publisher because the app isn't code-signed yet. This is expected and safe — see [Why the "unknown publisher" warning?](#why-the-unknown-publisher-warning) for the one-time steps to continue on each platform.
-
 When you open CodeRover for the first time it starts with a local account - no sign-in required - and takes you straight to the agent. Add your AI provider API key in settings and start chatting. To work on a specific project, attach a folder in the composer before sending your message.
 
 ### Verifying your download

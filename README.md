@@ -40,23 +40,6 @@ On Linux, install the package with `sudo apt install ./CodeRover_<version>_amd64
 
 When you open CodeRover for the first time it starts with a local account - no sign-in required - and takes you straight to the agent. Add your AI provider API key in settings and start chatting. To work on a specific project, attach a folder in the composer before sending your message.
 
-### Verifying your download
-
-Because the installers aren't code-signed yet, every release includes a `SHA256SUMS.txt` file so you can confirm your download is authentic and hasn't been tampered with. Compare the hash of your file against the matching line in that file:
-
-```powershell
-# Windows (PowerShell)
-Get-FileHash .\CodeRover_<version>_x64-setup.exe -Algorithm SHA256
-```
-
-```bash
-# macOS / Linux
-shasum -a 256 CodeRover_<version>_*.dmg   # macOS
-sha256sum CodeRover_<version>_amd64.deb    # Linux
-```
-
-If the hash matches the value in `SHA256SUMS.txt`, the file is exactly what our build pipeline produced.
-
 ### Updates
 
 CodeRover on **Windows and macOS** updates itself automatically via the built-in updater. On **Linux**, download and reinstall the latest `.deb` to upgrade. You can always grab the newest build from the [Releases](../../releases/latest) page.

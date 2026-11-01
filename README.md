@@ -77,4 +77,4 @@ Report problems or feature requests in the [Issues](../../issues) tab. When fili
 
 ## Data & Telemetry
 
-The CodeRover desktop app runs locally and does not send your code or conversations anywhere except to the AI provider you configure. The [coderover.dev](https://coderover.dev) website uses Google Analytics to measure page visits and download clicks so I can improve the product.
+The CodeRover desktop app runs locally and does not send your code or conversations anywhere except to the AI provider you configure. The [coderover.dev](https://coderover.dev) website uses Google Analytics to measure page visits and download clicks to improve the product.
